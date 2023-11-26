@@ -92,7 +92,7 @@ async function scrapeInParallel(endpoints: PartType[]) {
 }
 
 async function* scrape(endpoint: PartType, page: Page): AsyncGenerator<Part[]> {
-	await page.goto(`${BASE_URL}/${endpoint}`)
+	await page.goto(`${BASE_URL}/${endpoint}/${'#k=27'}`)
 
 	const paginationEl = await page.waitForSelector('.pagination', {
 		timeout: 5000,
