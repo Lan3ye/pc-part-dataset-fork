@@ -146,7 +146,7 @@ async function* scrape(endpoint: PartType, page: Page): AsyncGenerator<Part[]> {
 			const pageProducts: Part[] = []
 	
 			if (currentPage > 1) {
-				await page.goto(`${BASE_URL}/${endpoint}/#page=${currentPage}`)
+				await page.goto(`${BASE_URL}/${endpoint}/${socketUrl}&page=${currentPage}`)
 				await page.waitForNetworkIdle()
 			}
 	
